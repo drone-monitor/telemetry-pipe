@@ -18,3 +18,19 @@ example for output:
 pre-commit installed at .git/hooks/pre-commit
 
 ```
+
+## setup udp forwarding on mission planner 
+```
+    1.create mission simulator on mission planner with selected drone
+    2.connect and then :
+        1. enter setup 
+        2. select advanced
+        3. select mavlink miror
+        4. UDP CLIENT 48000
+        5. UDP inbound port 14550
+
+```
+
+<img src="./images/11.jpeg" alt="Settings Tab" width="400">
+<img src="./images/22.jpeg" alt="Settings Tab" width="400">
+
