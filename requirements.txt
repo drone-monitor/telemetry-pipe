@@ -4,3 +4,4 @@ ruff
 pre-commit
 jupyterlab
 geopandas
+requests~=2.31.0
