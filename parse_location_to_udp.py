@@ -33,13 +33,20 @@ def fetch_and_publish_gps(
         while True:
             # Fetch GPS data from the drone
             msg = master.recv_match(type="GLOBAL_POSITION_INT", blocking=True)
+            msg_baro = master.recv_match(type="VFR_HUD", blocking=True)
+
             if msg is not None:
                 # Extract GPS coordinates
                 lat = msg.lat / 1e7
                 lon = msg.lon / 1e7
 
+                if msg_baro is not None:
+                    # Extract barometric altitude
+                    altitude_baro = msg_baro.alt
+                else:
+                    altitude_baro = -1
                 # Prepare data to publish
-                gps_data = f"Latitude: {lat}, Longitude: {lon}"
+                gps_data = f"Latitude: {lat}, Longitude: {lon}, Altitude (Baro): {altitude_baro} meters"
                 print(gps_data)
                 # Publish GPS data on another port
                 publish_socket.sendto(gps_data.encode(), ("localhost", publish_port))
