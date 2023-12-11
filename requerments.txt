@@ -4,3 +4,4 @@ ruff
 pre-commit
 jupyterlab
 geopandas
+ardupilot_log_reader
