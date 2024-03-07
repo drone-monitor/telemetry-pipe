@@ -40,7 +40,7 @@ def fetch_and_publish_gps(
                     "droneId": 1,
                     "missionId": 18,
                     "height": alt,
-                    "coordinate": [lon, lat]
+                    "coordinate": [lat, lon]
                 }
 
                 # Print the payload for debugging
