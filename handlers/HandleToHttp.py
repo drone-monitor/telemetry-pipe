@@ -57,6 +57,4 @@ def fetch_and_publish_gps(
     publish_thread.start()
 
 
-if __name__ == "__main__":
-    # Example usage:
-    fetch_and_publish_gps("127.0.0.1", 14550, "http://localhost:12345/status")
+

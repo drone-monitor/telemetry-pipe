@@ -54,8 +54,3 @@ def fetch_and_publish_gps(
     # Start a thread for publishing GPS data
     publish_thread = threading.Thread(target=gps_publish_thread)
     publish_thread.start()
-
-
-if __name__ == "__main__":
-    # Example usage:
-    fetch_and_publish_gps("127.0.0.1", 14550, 9000)
